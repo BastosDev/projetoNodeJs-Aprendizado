@@ -13,3 +13,4 @@
     - Criamos um promptPromise para evitar callback hell, ou seja, a resposta não voltar para o usuário e finalizar a operação
     - Criamos uma async function askUser para perguntar ao usuario
         - Dentro dessa function definimos as variaveis do resultado e puxamos um console.log para mostrar para o usuario o resultado
+    - Depois chamamos o objeto criado na function para fora, para ser executado corretamento
