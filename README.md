@@ -1,5 +1,6 @@
 # Sobre a Aula
-
+<!-- console.dir para objetos -->
+<!-- console.error para erros -->
 ## Interface de IO com prompt
 - IO é input/output
 - prompt é a interface usuário - software
