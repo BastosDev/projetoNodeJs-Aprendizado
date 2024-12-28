@@ -16,12 +16,13 @@ const promptPromise = {
     close: prompt.close
 }
 
-prompt.question("Qual seu numero favorito?: ", (resposta) => {
-    console.log(`O dobro do seu numero favorito é : ${parseInt(resposta) * 2}`)
+async function askUser () {
+    const numero = await promptPromise.question("Qual seu numero favorito?: ")
+    console.log(`O dobro do seu numero favorito é : ${parseInt(numero) * 2}`)
 
-    prompt.question("Qual sua cor favorita?: ", (resposta) => {
-        console.log(`Sua cor favorita é : ${resposta}`)
+    const cor = await promptPromise.question("Qual sua cor favorita?: ")
+    console.log(`A sua cor favorita é: ${cor}`)
 
-            prompt.close
- })
-})
+}
+
+askUser()
