@@ -14,3 +14,4 @@
     - Criamos uma async function askUser para perguntar ao usuario
         - Dentro dessa function definimos as variaveis do resultado e puxamos um console.log para mostrar para o usuario o resultado
     - Depois chamamos o objeto criado na function para fora, para ser executado corretamento
+- A resposta SEMPRE vem como string então se for opetação numerica lembre de fazer as conversões
