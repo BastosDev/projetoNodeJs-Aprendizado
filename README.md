@@ -28,7 +28,22 @@
 - Usamos fs.readFile para ler o arquivo do sistema da seguinte forma
     - Ex .: fs.readFile(filePath, {}, (erro, dados) => {
                 if(erro){
-                    console.log(`Error reading file location in : ${filePath}`)                    return
+                    console.log(`Error reading file location in : ${filePath}`)                    
+                    return
                 }
                 console.log(dados.toString())
             })
+- Para manipular o arquivo para mostrar o numero de linhas por exemplo, fazemos da seguinte forma
+    - Apos o if, definimos uma const text = dados.toString() para transformar para string
+    - Usamos uma const lines = text.split("\n") para separar cada linha
+    - Criamos uma const adjustedLines = lines.map((line, index) => `${index+1} - ${line}`)
+        - nesta linha estamos definindo para separar as linhas do texto em arrays e mostrar na tela seu index(numero da linha) e sua linha
+    - Utilizamos fs.writeFile para escrever o novo arquivo da seguinte forma :
+        - Voltamos no inicio do codigo e definimos uma variavel const fileOutPath = path.join(process.cwd(), "texto-with-line.txt")
+        - fs.writeFile(fileOutPath, adjustedLines.join("\n"), {}, (erro) => {
+            if(erro) { 
+                console.log(`Erro no caminho do arquivo ${filePath}`)
+                return
+            }
+          })
+        - Apos isso o arquvio foi criado no seu diretorio
