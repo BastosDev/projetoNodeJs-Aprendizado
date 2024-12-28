@@ -1,11 +1,13 @@
 const path = require("node:path")
 const fs = require("node:fs")
-const filePath = path.join(process.cwd(), "texto.txt")
+const filePath = path.join(process.cwd(), "texto.tx")
 const fileOutPath = path.join(process.cwd(), "texto-with-lines.txt")
+
+console.log(filePath)
 
 fs.readFile(filePath, {}, (erro, dados) => {
     if (erro) {
-       console.log(`Erro no caminho do arquivo ${filePath}`)
+       console.error(`Erro no caminho do arquivo ${filePath}`)
        return
     }
     const text = dados.toString()
