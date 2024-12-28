@@ -13,7 +13,7 @@ const promptPromise = {
             reject(error)
         }
     }),
-    close: prompt.close
+    close: () => prompt.close()
 }
 
 async function askUser () {
@@ -22,7 +22,7 @@ async function askUser () {
 
     const cor = await promptPromise.question("Qual sua cor favorita?: ")
     console.log(`A sua cor favorita é: ${cor}`)
-
+    promptPromise.close()
 }
 
 askUser()
